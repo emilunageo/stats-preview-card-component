@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Quicksand:wght@700&display=swap');
+
+:root {
+    /*Display size*/
+    --mobile: 375px;
+    --desktop: 1439px;
+    /*Primary colors*/
+    --very-dark-blue: hsl(233, 47%, 7%); /*(main background)*/
+    --dark-desaturated-blue: hsl(244, 38%, 16%); /*(card background)*/
+    --soft-violet: hsl(277, 64%, 61%); /*(accent)*/
+    /*Neutral colors*/
+    --white: hsl(0, 0%, 100%); /*(main heading, stats)*/
+    --slightly-transparent-white: hsla(0, 0%, 100%, 0.75); /*(main paragraph)*/
+    --slightly-transparent-white: hsla(0, 0%, 100%, 0.6); /*(stat headings)*/
+    /*Size*/
+    --xs: 10px;
+    --sm: 12px;
+    --md: 14px;
+    --lg: 22px;
+    --xl: 26px;
+    /*Font weight*/
+    --normal: 400;
+    --bold: 700;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--very-dark-blue);
+    font-family: 'Inter', 'sans-serif';
+    color: var(--white);
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .component {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    background-color: var(--dark-desaturated-blue);
+}
+
+.container .component .card-thumbnail {
+    width: 100%;
+    height: 220px;
+    margin-bottom: 28px;
+    background-image: url("../assets/image-header-mobile.jpg");
+    background-size: cover;
+    border-radius: 12px 12px 0 0;
+}
+
+.container .component .card-thumbnail .overlay {
+    width: 100%;
+    height: 100%;
+    opacity: .6;
+    background-color: hsl(277deg 100% 27%);
+    border-radius: 0 12px 12px 0;
+}
+
+.container .component .card-content {
+    padding: 0 20px;
+}
+
+.container .component .card-content h1 {
+    font-size: var(--lg);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.container .component .card-content h1 span {color: var(--soft-violet);}
+
+.container .component .card-content .card-main-paragraph p {
+    font-size: var(--sm);
+    color: var(--slightly-transparent-white);
+    text-align: center;
+    line-height: var(--lg);
+    margin-bottom: 28px;
+}
+
+.container .component .card-content .card-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container .component .card-content .card-data p {
+    text-align: center;
+    font-size: 10px;
+    color: var(--slightly-transparent-white);
+    margin-bottom: 28px;
+}
+
+.container .component .card-content .card-data p span {
+    font-size: var(--lg);
+    font-weight: 700;
+    color: var(--white);
+    display: block;
+}
+/*Tablet*/
+@media (min-width: 767px) {
+    .container .component .card-content .card-data {
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: center;
+        margin-bottom: 28px;
+    }
+}
+/*SM laptop*/
+@media (min-width: 1023px) {
+    .container .component .card-thumbnail {
+        width: 100%;
+        height: auto;
+        background-image: url("../assets/image-header-desktop.jpg");
+        background-size: cover;
+        margin: 0;
+        border-radius: 0 12px 12px 0;
+    }
+    .container .component {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    .container .component .card-content {
+        padding: 60px 60px;
+    }
+    .container .component .card-content h1 {
+        font-size: 28px;
+        text-align: left;
+        margin-bottom: 16px;
+    }
+    .container .component .card-content .card-main-paragraph p {
+        font-size: var(--md);
+        text-align: left;
+        line-height: var(--lg);
+        margin-bottom: 60px;
+    }
+    .container .component .card-content .card-data {
+        margin: 0;
+        display: flex;
+        justify-content: start;
+    }
+    .container .component .card-content .card-data p {
+        text-align: left;
+        margin-right: 60px;
+        margin-bottom: 0;
+    }
+}
+/*Laptop*/
+@media (min-width: 1239px) {
+    .container .component .card-content {
+        padding: 60px 100px;
+    }
+    .container .component .card-content h1 {
+        font-size: 36px;
+        margin-bottom: 32px;
+    }
+    .container .component .card-content .card-main-paragraph p {
+        font-size: 16px;
+        margin-bottom: 80px;
+    }
+    .container .component .card-content .card-data p {
+        font-size: var(--sm);
+        margin-right: 80px;
+    }
+    .container .component .card-content .card-data p span {
+        font-size: var(--xl);
+    }
+}
+/*Big screen*/
+@media (min-width: 1649px) {
+    .container .component .card-content h1 {font-size: 42px;}
+
+    .container .component .card-content .card-main-paragraph p {
+        font-size: 18px;
+    }
+    .container .component .card-content .card-data p {
+        font-size: var(--md);
+        margin-bottom: 0;
+    }
+    .container .component .card-content .card-data p span {
+        font-size: 32px;
+    }
+}
+/*4K*/
+@media (min-width: 2559px) {
+    .container .component .card-content {
+        padding: 100px 100px;
+    }
+    .container .component .card-content h1 {
+        font-size: 80px;
+        margin-bottom: 34px;
+    }
+    .container .component .card-content .card-main-paragraph p {
+        font-size: 30px;
+        line-height: 48px;
+        margin-bottom: 100px;
+    }
+    .container .component .card-content .card-data p {
+        font-size: var(--lg);
+        margin-right: 160px;
+    }
+    .container .component .card-content .card-data p span {
+        font-size: 48px;
+    }
+}
